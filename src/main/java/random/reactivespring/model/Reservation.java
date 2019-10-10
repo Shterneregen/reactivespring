@@ -11,9 +11,9 @@ public class Reservation {
 
     private Long roomNumber;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    private LocalDate checkin;
+    private LocalDate checkIn;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    private LocalDate checkout;
+    private LocalDate checkOut;
     private Integer price;
 
     @Id
@@ -22,10 +22,10 @@ public class Reservation {
     public Reservation() {
     }
 
-    public Reservation(Long roomNumber, LocalDate checkin, LocalDate checkout, Integer price) {
+    public Reservation(Long roomNumber, LocalDate checkIn, LocalDate checkOut, Integer price) {
         this.roomNumber = roomNumber;
-        this.checkin = checkin;
-        this.checkout = checkout;
+        this.checkIn = checkIn;
+        this.checkOut = checkOut;
         this.price = price;
     }
 
@@ -37,20 +37,20 @@ public class Reservation {
         this.roomNumber = roomNumber;
     }
 
-    public LocalDate getCheckin() {
-        return checkin;
+    public LocalDate getCheckIn() {
+        return checkIn;
     }
 
-    public void setCheckin(LocalDate checkin) {
-        this.checkin = checkin;
+    public void setCheckIn(LocalDate checkIn) {
+        this.checkIn = checkIn;
     }
 
-    public LocalDate getCheckout() {
-        return checkout;
+    public LocalDate getCheckOut() {
+        return checkOut;
     }
 
-    public void setCheckout(LocalDate checkout) {
-        this.checkout = checkout;
+    public void setCheckOut(LocalDate checkOut) {
+        this.checkOut = checkOut;
     }
 
     public Integer getPrice() {
