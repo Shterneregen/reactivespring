@@ -1,6 +1,7 @@
 package random.reactivespring.service;
 
 import random.reactivespring.model.Reservation;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface ReservationService {
@@ -12,4 +13,6 @@ public interface ReservationService {
     Mono<Reservation> updateReservation(String id, Mono<Reservation> reservationMono);
 
     Mono<Boolean> deleteReservation(String id);
+
+    Flux<Reservation> listAllReservations();
 }

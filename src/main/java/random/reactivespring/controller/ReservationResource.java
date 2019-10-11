@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import random.reactivespring.model.Reservation;
 import random.reactivespring.service.ReservationService;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -32,6 +33,11 @@ public class ReservationResource {
     @GetMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Mono<Reservation> getReservationById(@PathVariable String id) {
         return reservationService.getReservation(id);
+    }
+
+    @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public Flux<Reservation> getAllReservations() {
+        return reservationService.listAllReservations();
     }
 
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
